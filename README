@@ -1,0 +1,29 @@
+This project has one server.c for the server. 
+client.c and client1.c files which are the two clients. 
+database.txt which stores information about available products
+
+
+
+1) Open the terminal and run->  gcc server.c -o serverout
+
+2) Run the executable -> ./serverout 5000 
+   (The general format is ./serverout <port-number> here port-number=5000) 
+   
+3) Open a seperate terminal and run-> gcc client.c -o clientout 
+
+4) Open another new termial and run-> gcc client1.c -o client1out 
+
+5) Execute ./clientout 127.0.0.1 5000 on the terminal in which you ran (gcc client.c -o clientout) 
+The general format is ./clientout <IP-Address> <portnumber>.
+But here since the server is located on the same system as the client, the IP Address is 127.0.0.1. The port-number should be the same as the port-number in step 2.
+
+6) Execute ./client1out 127.0.0.1 5000 on the terminal on which you ran (gcc client1.c -o client1out)
+The general format is ./client1out <IP-Address> <portnumber>. 
+But here since the server is located on the same system as the client the IP Address is 127.0.0.1. The port-number should be the same as the port-number in step 2.
+
+7) Execute step 5 and step 6 quickly one after another to verify that the requests are being served concurrently.
+
+NOTE: There is a small time interval between each request and response, this has been done intentionally so that the evaluator is able to verify that requests are being served concurrently. 
+
+
+
